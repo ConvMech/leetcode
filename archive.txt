@@ -1,0 +1,42 @@
+########################
+01 FIND NUMBER IN A 2D MATRIX, RERTURN ARG
+#######################
+#include <iostream>
+#include <vector>
+#include <utility>
+
+using namespace ::std;
+
+pair<int,int> findNum(vector<vector<int> >& in, int target){
+    //cout<<"row number"<< in.size()<<endl;
+    //cout<<"col number"<< in[0].size()<<endl;
+
+    int rowMax = in.size() - 1;
+    int colMax = in[0].size() - 1;
+
+    pair<int,int> cursor(rowMax,0);
+
+    while (cursor.first >= 0 && cursor.second <= colMax){
+        int curr = in[cursor.first][cursor.second];
+        if (curr == target){
+            return cursor;
+        }
+        else if (curr > target){
+            cursor.first --;
+        }
+        else if (curr < target) {
+            cursor.second++;
+        }
+    }
+    return make_pair(-1,-1);
+}
+
+int main() {
+
+    vector<vector<int> >test = {{1,2,3},
+                                {4,5,6},
+                                {7,8,9}};
+    pair<int,int>res = findNum(test,3);
+    cout<<"result"<<res.first<<" "<<res.second<<endl;
+    return 0;
+}
