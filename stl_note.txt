@@ -1,0 +1,115 @@
+1 sort:
+	
+	struct f {
+		bool operator()(int &a, int& b) {
+			return a < b;  # 升序
+			// return a > b; # 降序
+		}
+	};
+
+	sort(a.begin(),a.end(),f())
+
+2. unordered_map:
+
+	时间复杂度， 插入 O（1）， 查找 O（1）
+	initialization: 
+		unordered_map<char,int> mymap;
+
+	push:
+		mymap['a'] = 1;
+
+	visit:
+		int val = mymap['a'];
+		//并且没有的key不可以这么做
+
+	find:
+		mymap.count(key)
+		//会返回 true 或者 false;
+
+	第二种find:
+		mymap.find(key) != mymap.end();
+		// 如果是true的话，说明有key，否则没有key，只有做了以上的find检查之后才能用visit()
+
+	take all:
+		for (auto m:mymap){
+			char key = m.first;
+			int val = m.second;
+		}
+
+3. map:
+
+	map 按照key升序排列。时间复杂度，插入 O（logn），查找 O（logn）
+	initialization: 
+		map<char,int> mymap;
+
+	push:
+		mymap['a'] = 1;
+
+	visit:
+		int val = mymap['a'];
+		//并且没有的key不可以这么做
+
+	find:
+		mymap.count(key)
+		//会返回 true 或者 false;
+
+	第二种find:
+		mymap.find(key) != mymap.end();
+		// 如果是true的话，说明有key，否则没有key，只有做了以上的find检查之后才能用visit()
+
+	take all:
+		for (auto m:mymap){
+			char key = m.first;
+			int val = m.second;
+		}
+	
+4. unordered_set:
+	
+	时间复杂度 插入 O（1）， 查找 O（1）
+
+	initizalization:
+		unordered_set<int> myset;
+
+	push:
+		myset.insert(int key);
+
+	find:
+		myset.count(int key);
+
+	第二种find:
+		myset.find(int key) != myset.end();
+
+	take all:
+		for(auto s: myset){
+			int key = s;
+		}
+
+5. set:
+	
+	时间复杂度 插入 O（logn）， 查找 O（n）
+
+	initizalization:
+		set<int> myset;
+
+	push:
+		myset.insert(int key);
+
+	find:
+		myset.count(int key);
+
+	第二种find:
+		myset.find(int key) != myset.end();
+
+	take all:
+		for(auto s: myset){
+			int key = s;
+		}
+
+
+6. string:
+	
+	reverse:
+		reverse(s.begin(), s.end());
+
+	
+
