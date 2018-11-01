@@ -1,4 +1,4 @@
-1 sort:
+	1 sort:
 	
 	struct f {
 		bool operator()(int &a, int& b) {
@@ -84,6 +84,9 @@
 			int key = s;
 		}
 
+	erase:
+		myset.erase();
+
 5. set:
 	
 	时间复杂度 插入 O（logn）， 查找 O（n）
@@ -111,5 +114,100 @@
 	reverse:
 		reverse(s.begin(), s.end());
 
+7. set => vector:
+
+	vector<int> v(s.begin(),s.end())
+
+8. queue:
+
+	initialization:
+		queue<int> myq;
 	
+	check empty:
+		myq.empty();
+
+	push:
+		myq.push(int key);
+
+	check front:
+		int val = myq.front();
+
+	pop:
+		myq.pop();
+
+	size():
+		myq.size();
+
+9. priority_queue:
+	
+	时间复杂度
+
+		push，pop 都是log k k是目前的size
+
+	initialization:
+		method 1:
+			priority_queue<int> myq;
+			// 最大的在前面，剩下的杂乱
+			// 默认最小的push往后push
+
+		method 2:
+			priority_queue<int,vector<int>,greater<int> > myq;
+			// 最小的在前面，剩下杂乱
+
+		method 3:
+
+			eg1:
+
+			priority_queue<int,vector<int>,f> myq;
+			struct f{
+				bool operator()(int& a, int& b){
+					return a > b; // 和sort是反的，是最小的在前面
+					// 同时f没有括号
+					// 也是可以理解的，相当于greater，越大越往后push
+				}
+			};
+
+			eg2:
+			priority_queue<pair<int,int>,vector<pair<int,int>,f> myq;
+
+			// 如果是pair的话，默认按照pair的first，最大在前面
+
+	check empty:
+		myq.empty();
+
+	push:
+		myq.push(int key);
+
+	front:
+		int val = myq.top();
+
+	pop:
+		myq.pop();
+
+	size:
+		int size = myq.size();
+
+
+10. stack:
+	
+	时间复杂度。 全部O（1）
+
+	1. stack<int> mystack;
+
+	2. empty()
+		mystack.empty();
+
+	3. size:
+		mystack.size();
+
+	4. push();
+		mystack.push();
+
+	5. top:
+		mystack.top();
+
+	6. pop:
+		mystack.pop();
+
+
 
