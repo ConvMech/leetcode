@@ -209,5 +209,59 @@
 	6. pop:
 		mystack.pop();
 
+11. linklist:
+	
+	双链表
+
+	1. initialization:
+
+		list<int> mylist;
+
+	2. size:
+
+		mylist.size();
+
+	3. 插入新的值：
+
+		mylist.push_back();
+
+	4. 指针的方法：
+
+		list<int>::iterator it;
+		it = mylist.begin();
+
+		cout<< (*it) <<endl;
+
+		it ++;
+
+		while(it != mylist.end()){
+			cout<<(*it)<<endl;
+			it++;
+		}
+
+	5. 去除：
+
+		mylist.erase(it);
+
+		mylist.pop_back();
+
+	6. 访问尾
+
+		it = (--mylist.end());
+
+	7. 从头插入：
+
+		mylist.push_front();
+
+	8. 任意插入：
+
+		it = mylist.begin();
+
+		原来的链表：  1,2,3,4,5
+
+		mylist.insert(it,10);
+
+		链表变成  : 10,1,2,3,4,5
+
 
 
