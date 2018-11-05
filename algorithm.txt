@@ -1,0 +1,29 @@
+#1. BACKTRACKING:
+
+EXAMPLE: GIVE {2,3,4,5}, FIND ALL COMBINATIONS THAT CAN SUM TO SAY, 7;
+
+void helper(vector<vector<int>>& result, vector<int>& candidates, vector<int>& tmp, int target, int startIdx){
+        // recall dfs
+        if (target  == 0){
+            result.push_back(tmp);
+            return;
+        }
+        else if (target <0 || startIdx >= candidates.size()){
+            return;
+        }
+        // recall dfs (in grid search), first change the value in grid, then search its children, finally change the grid value back.
+        // here i = startIdx because cannot cout repeated combination
+        for (int i = startIdx; i < candidates.size(); ++i){
+            tmp.push_back(candidates[i]);
+            helper(result,candidates,tmp,target-candidates[i],i); // because can use same value multiple times, use i not i+1;
+            tmp.pop_back();
+        }
+        return;
+    }
+    
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> result;
+        vector<int> tmp;
+        helper(result,candidates,tmp,target,0);
+        return result;
+    }

@@ -36,6 +36,17 @@
 			int val = m.second;
 		}
 
+		auto it = mymap.begin();
+		while (it != mymap.end()){
+			cout<< it->first <<endl; //key
+			cout<< it->second <<endl;	// value
+			it ++:
+		}
+
+	去除：
+
+		mymap.erase(int key);
+
 3. map:
 
 	map 按照key升序排列。时间复杂度，插入 O（logn），查找 O（logn）
@@ -211,7 +222,7 @@
 
 11. linklist:
 	
-	双链表
+	双链表: begin指向第一个值，end指向最后的NULL
 
 	1. initialization:
 
