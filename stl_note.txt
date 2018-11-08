@@ -274,5 +274,14 @@
 
 		链表变成  : 10,1,2,3,4,5
 
+12 parse a string:
+		
+	string a;
+	string tmp;
+	istringstream input(a);
+	while (input>>tmp){
+		cout<<tmp<<endl;
+	}
+
 
 
