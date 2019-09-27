@@ -1,0 +1,6 @@
+1. GET, 相当于SQL的SELECT
+2. POST，相当于SQL的 INSERT
+
+总之看一下CRUD
+这些东西都叫做Restful API
+Restful API， 就是CRUD之类的东西
